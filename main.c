@@ -1,4 +1,6 @@
-#include <mlx.h>
+//#include <mlx.h>
+#include "./mlx/mlx.h"
+#include "./mlx/mlx_int.h"
 #include "./libft/libft.h"
 #include <unistd.h>
 #include <sys/types.h>
@@ -25,14 +27,17 @@ void	quit_game(t_data *img)
 	i = 0;
 	j = 0;
 	printf("quit game\n");
-	image = mlx_new_image(img->mlx, 13 * 32, 10 * 32);
+	//image = mlx_new_image(img->mlx, 13 * 32, 10 * 32);
 	//mlx_put_image_to_window(img->mlx, img->mlx_win, image, 0, 0)
 	mlx_clear_window(img->mlx, img->mlx_win);
 	mlx_destroy_window(img->mlx, img->mlx_win);
+
+
+	mlx_destroy_display(img->mlx);
 	if (img->mlx)
 		free(img->mlx);
 	//if (img->mlx_win)
-		//free(img->mlx_win);
+	//	free(img->mlx_win);	
 	while (img->map_tab[i])
 		free(img->map_tab[i++]);
 	//if (img->map_tab);
