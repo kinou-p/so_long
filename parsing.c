@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apommier <apommier@student.4map.fr>          +#+  +:+       +#+        */
+/*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: map0map/0map/13 16:map1:43 by apommier          #+#    #+#             */
-/*   Updated: map0map/0map/13 map1:map4:44 by apommier         ###   ########.fr       */
+/*   Created: 2022/02/13 22:26:34 by apommier          #+#    #+#             */
+/*   Updated: 2022/02/13 22:28:18 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "so_long.h"
 #include "./libft/libft.h"
-#include <stdio.h>
 
-
-int is_player(char **map)
+int	is_player(char **map)
 {
 	int	i;
 	int	j;
@@ -40,7 +37,7 @@ int is_player(char **map)
 	return (0);
 }
 
-int is_exit(char **map)
+int	is_exit(char **map)
 {
 	int	i;
 	int	j;
@@ -62,10 +59,9 @@ int is_exit(char **map)
 	if (exit > 0)
 		return (1);
 	return (0);
-
 }
 
-int is_item(char **map)
+int	is_item(char **map)
 {
 	int	i;
 	int	j;
@@ -87,11 +83,11 @@ int is_item(char **map)
 	return (item);
 }
 
-int is_rectangle(char **map)
+int	is_rectangle(char **map)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
 	while (map[j])
@@ -99,8 +95,9 @@ int is_rectangle(char **map)
 		i = 1;
 		while (map[j][i])
 		{
-			if (map[j][i] != '0' && map[j][i] != '1' && map[j][i] != 'P' && map[j][i] != 'E' && map[j][i] != 'C')
-			return (0);
+			if (map[j][i] != '0' && map[j][i] != '1' && map[j][i] != 'P'
+				&& map[j][i] != 'E' && map[j][i] != 'C')
+				return (0);
 			i++;
 		}
 		j++;
@@ -142,7 +139,7 @@ int	is_close(char **map)
 	return (1);
 }
 
-void ft_error(char *error_msg, char **map)
+void	ft_error(char *error_msg, char **map)
 {
 	int	i;
 
@@ -153,7 +150,7 @@ void ft_error(char *error_msg, char **map)
 	exit(1);
 }
 
-int check_map(char **map)
+int	check_map(char **map)
 {
 	if (!is_player(map))
 		ft_error("You need just one player\n", map);
