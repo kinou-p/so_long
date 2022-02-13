@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 23:39:18 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 00:42:06 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/14 00:55:10 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	check_arg(int argc, char **argv)
 	{
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
-			ft_error("Error: The map file doesn't exist\n", 0);
+			ft_error("Error: Map file doesn't exist\n", 0);
 		close(fd);
 	}
 	else

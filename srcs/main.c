@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:42:55 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 00:41:30 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/14 00:54:18 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,10 @@ char	**set_map(char **argv)
 	char	*swap;
 	int		fd;
 
-	swap = 0;
 	map = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		ft_error("Error: Open call fail", 0);
+		ft_error("Error: Open call fail\n", 0);
 	swap = get_next_line(fd);
 	while (swap)
 	{
@@ -114,6 +113,8 @@ char	**set_map(char **argv)
 	close(fd);
 	map_tab = ft_split(map, '\n');
 	free(map);
+	if (!map_tab)
+		ft_error("Error: Map file is empty\n", 0);
 	return (map_tab);
 }
 
