@@ -6,12 +6,11 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:26:34 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/13 22:28:18 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/13 23:47:44 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "./libft/libft.h"
 
 int	is_player(char **map)
 {
@@ -136,31 +135,5 @@ int	is_close(char **map)
 		if (map[j - 1][i++] != '1')
 			return (0);
 	}
-	return (1);
-}
-
-void	ft_error(char *error_msg, char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-		free(map[i++]);
-	ft_putstr_fd(error_msg, 2);
-	exit(1);
-}
-
-int	check_map(char **map)
-{
-	if (!is_player(map))
-		ft_error("You need just one player\n", map);
-	if (!is_exit(map))
-		ft_error("There is no exit\n", map);
-	if (!is_close(map))
-		ft_error("The map isn't close\n", map);
-	if (!is_item(map))
-		ft_error("There is no item\n", map);
-	if (!is_rectangle(map))
-		ft_error("The map isn't a rectangle\n", map);
 	return (1);
 }

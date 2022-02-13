@@ -6,17 +6,18 @@
 #    By: apommier <apommier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 16:27:49 by apommier          #+#    #+#              #
-#    Updated: 2022/02/13 21:59:15 by apommier         ###   ########.fr        #
+#    Updated: 2022/02/13 23:53:19 by apommier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= so_long
-SRCS	= main.c\
-			parsing.c
+SRCS	= srcs/main.c\
+			srcs/parsing.c\
+			srcs/utils.c\
+			srcs/print_map.c
 OBJS	= ${SRCS:.c=.o}
 CC		= gcc
 LIB		= -L ./mlx -lmlx -lXext -lX11
-INC 	= -I ./inc/ -I ./mlx
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 LIBFT	= ./libft
