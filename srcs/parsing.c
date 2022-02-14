@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:26:34 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/13 23:47:44 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/14 00:58:23 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	is_item(char **map)
 		i = 1;
 		while (map[j][i])
 		{
-			if (map[j][i++] == 'E')
+			if (map[j][i++] == 'C')
 				item++;
 		}
 		j++;
