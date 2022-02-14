@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:42:55 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 23:49:53 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:08:06 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,27 +118,6 @@ char	**set_map(char **argv)
 	return (map_tab);
 }
 
-int	button_press(int code, t_data *img)
-{
-	int	i;
-
-
-	(void)code;
-	printf("img in buttom = %p\n", img);
-	printf("move = %d\n", img->move);
-	//printf("img->mlx = %p\n", img->mlx);
-	i = 0;
-	mlx_destroy_window(img->mlx, img->mlx_win);
-	mlx_destroy_display(img->mlx);
-	if (img->mlx)
-		free(img->mlx);
-	while (img->map_tab[i])
-		free(img->map_tab[i++]);
-	free(img->map_tab);
-	//quit_game(img);
-	exit(1);
-}
-
 int	main(int argc, char **argv)
 {
 	t_data	img;
@@ -159,11 +138,7 @@ int	main(int argc, char **argv)
 	img.mlx_win = mlx_new_window(img.mlx, ft_strlen(img.map_tab[0]) * 32,
 			height * 32, "Hungry Bear");
 	print_map(img.map_tab, &img);
-	printf("img in main= %p\n", &img);
-	//mlx_hook(img.mlx_win, DestroyNotify, NoEventMask, &button_press, &img);
-	
 	mlx_hook(img.mlx_win, 2, 1L << 0, &key_press, &img);
-	mlx_hook(img.mlx_win, 33, 1L << 17, &button_press, &img);
-	//mlx_key_hook(img.mlx_win, &key_press, &img);
+	mlx_hook(img.mlx_win, 17, 0L, &quit_game, &img);
 	mlx_loop(img.mlx);
 }

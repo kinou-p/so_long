@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 23:37:02 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 23:49:04 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:08:44 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	check_map(char **map)
 	return (1);
 }
 
-void	quit_game(t_data *img)
+int	quit_game(t_data *img)
 {
 	int	i;
 
@@ -55,6 +55,7 @@ void	quit_game(t_data *img)
 		free(img->map_tab[i++]);
 	free(img->map_tab);
 	exit(1);
+	return (1);
 }
 
 int	key_press(int code, t_data *img)

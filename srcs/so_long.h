@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:30:59 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/14 00:37:07 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:02:48 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_arg(int argc, char **argv);
 //utils
 void	ft_error(char *error_msg, char **map);
 int		check_map(char **map);
-void	quit_game(t_data *img);
+int		quit_game(t_data *img);
 int		key_press(int code, t_data *img);
 int		*choose_bear(t_data *img);
 
