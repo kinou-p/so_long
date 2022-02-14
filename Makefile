@@ -6,7 +6,7 @@
 #    By: apommier <apommier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 16:27:49 by apommier          #+#    #+#              #
-#    Updated: 2022/02/13 23:53:19 by apommier         ###   ########.fr        #
+#    Updated: 2022/02/14 23:44:46 by apommier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ SRCS	= srcs/main.c\
 			srcs/utils.c\
 			srcs/print_map.c
 OBJS	= ${SRCS:.c=.o}
-CC		= gcc
+CC		= gcc 
 LIB		= -L ./mlx -lmlx -lXext -lX11
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -g -Wall -Wextra
 RM		= rm -rf
 LIBFT	= ./libft
 
