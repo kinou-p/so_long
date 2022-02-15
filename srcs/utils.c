@@ -6,7 +6,7 @@
 /*   By: apommier <apommier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 23:37:02 by apommier          #+#    #+#             */
-/*   Updated: 2022/02/15 00:08:44 by apommier         ###   ########.fr       */
+/*   Updated: 2022/02/15 01:21:17 by apommier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	quit_game(t_data *img)
 	int	i;
 
 	i = 0;
-	printf("img = %p\n", img);
 	mlx_destroy_window(img->mlx, img->mlx_win);
 	mlx_destroy_display(img->mlx);
 	if (img->mlx)
