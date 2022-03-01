@@ -22,6 +22,7 @@ void	ft_error(char *error_msg, char **map)
 		while (map[i])
 			free(map[i++]);
 	}
+	free(map);
 	ft_putstr_fd(error_msg, 2);
 	exit(1);
 }
